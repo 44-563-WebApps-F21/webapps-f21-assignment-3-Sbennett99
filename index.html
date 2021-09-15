@@ -149,11 +149,36 @@
             </td>
         </tr>
     </table>
-
-
-
-
-
+    <hr>
+    <h4>
+        String Hashing
+    </h4>
+    <p>What is String Hashing?</p>
+    <blockquote cite = "https://www.geeksforgeeks.org/string-hashing-using-polynomial-rolling-hash-function/">
+        String hashing is the way to convert a
+        string into an integer known as a hash
+        of that string.
+        An ideal hashing is the one in which 
+        there are minimum chances of collision. 
+    </blockquote>
+    <a href= "https://www.geeksforgeeks.org/string-hashing-using-polynomial-rolling-hash-function/"> -String Hashing as Defined by GeeksforGeeks</a>
+    <pre>
+        long long compute_hash(string const& s) {
+            const int p = 31;
+            const int m = 1e9 + 9;
+            long long hash_value = 0;
+            long long p_pow = 1;
+            for (char c : s) {
+                hash_value = (hash_value + (c - 'a' + 1) * p_pow) % m;
+                p_pow = (p_pow * p) % m;
+            }
+            return hash_value;
+        }
+    </pre>
+    <hr>
+    <h4>
+        More About Me at the link below
+    </h4>
 
     <a href="aboutme.html">About Me... A superhero</a>
 
